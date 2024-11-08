@@ -43,3 +43,22 @@ spring.datasource.username=your_mysql_username
 spring.datasource.password=your_mysql_password
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+
+### 3. Folder Structure
+hotel-booking-management-system/
+├── README.md                        # Project documentation
+├── database/
+│   └── schema.sql                   # SQL script for database schema
+└── src/
+    ├── main/
+    │   ├── java/com/example/hotel/
+    │   │   ├── HotelBookingApplication.java  # Main application file
+    │   │   ├── controller/                   # REST API controllers
+    │   │   ├── model/                        # Data model classes
+    │   │   ├── repository/                   # Repository interfaces
+    │   │   └── service/                      # Business logic services
+    └── resources/
+        ├── application.properties            # Configuration settings
+        ├── templates/                        # Frontend templates (optional)
+        └── static/                           # Static files like CSS/JS
+
