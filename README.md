@@ -44,12 +44,12 @@ spring.datasource.password=your_mysql_password
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true```
 
-## Contributors
+#### Contributors
 
 -  Loc Tran Tran
 - Nguyen Tho Ngoc
 
 
-## License
+#### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
