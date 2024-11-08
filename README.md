@@ -44,7 +44,7 @@ spring.datasource.password=your_mysql_password
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 
-### 3. Folder Structure
+#### 3. Folder Structure
 hotel-booking-management-system/
 ├── README.md                        # Project documentation
 ├── database/
