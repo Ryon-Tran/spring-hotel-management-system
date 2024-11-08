@@ -34,11 +34,11 @@ This repository provides a fully functional **Hotel Booking Management System** 
 git clone https://github.com/yourusername/hotel-booking-management-system.git
 cd hotel-booking-management-system
 
-2. Set up the Database
+### 2. Set up the Database
 Create a MySQL database named hotel_management.
 Open the application.properties file in src/main/resources and update the database configuration:
 properties
-Sao chép mã
+
 spring.datasource.url=jdbc:mysql://localhost:3306/hotel_management
 spring.datasource.username=your_mysql_username
 spring.datasource.password=your_mysql_password
@@ -48,13 +48,11 @@ spring.jpa.show-sql=true
 To create the required tables, run the SQL schema file located in database/schema.sql:
 
 sql
-Sao chép mã
 mysql -u your_mysql_username -p hotel_management < database/schema.sql
 4. Build and Run the Application
 Use Maven to build and start the application:
 
 bash
-Sao chép mã
 mvn spring-boot:run
 Once the application is running, access the API at http://localhost:8080.
 
