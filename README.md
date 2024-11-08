@@ -29,8 +29,6 @@ This repository provides a fully functional **Hotel Booking Management System** 
 ### Installation
 
 #### 1. Clone the repository
-
-```bash
 git clone https://github.com/yourusername/hotel-booking-management-system.git
 cd hotel-booking-management-system
 
