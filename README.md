@@ -32,7 +32,7 @@ This repository provides a fully functional **Hotel Booking Management System** 
 git clone https://github.com/yourusername/hotel-booking-management-system.git
 cd hotel-booking-management-system
 
-### 2. Set up the Database
+#### 2. Set up the Database
 Create a MySQL database named hotel_management.
 Open the application.properties file in src/main/resources and update the database configuration:
 properties
