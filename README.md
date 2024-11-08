@@ -45,18 +45,29 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 ```
 ## Folder Structure
+-`hotel-booking-management-system/
+├── README.md                        # Project documentation
+├── database/
+│   └── schema.sql                   # SQL script for database schema
+└── src/
+    ├── main/
+    │   ├── java/com/example/hotel/
+    │   │   ├── HotelBookingApplication.java  # Main application file
+    │   │   ├── controller/                   # REST API controllers
+    │   │   ├── model/                        # Data model classes
+    │   │   ├── repository/                   # Repository interfaces
+    │   │   └── service/                      # Business logic services
+    └── resources/
+        ├── application.properties            # Configuration settings
+        ├── templates/                        # Frontend templates (optional)
+        └── static/                           # Static files like CSS/JS
 
--  `src/main/java`: Contains the main application code.
--  `src/main/resources/templates`: Will replace by ReactJS for Front end.
--  `src/main/resources/static`: Contains static assets like CSS, JavaScript and images.
--  `src/main/resources/application.properties`: Configuration file for database and other settings.
 
 ## Contributors
 
--  Le Do Nghiem
 -  Loc Tran Tran
--  Pham Ba Duong
--  Pham Tinh
+-  Nguyen Tho 
+
 
 ## License
 
