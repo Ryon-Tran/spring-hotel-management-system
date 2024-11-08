@@ -37,10 +37,18 @@ Create a MySQL database named hotel_management.
 Open the application.properties file in src/main/resources and update the database configuration:
 properties
 
-```bash
+bash
 spring.datasource.url=jdbc:mysql://localhost:3306/hotel_management
 spring.datasource.username=your_mysql_username
 spring.datasource.password=your_mysql_password
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 
+## Contributors
+
+-  Loc Tran Tran
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
