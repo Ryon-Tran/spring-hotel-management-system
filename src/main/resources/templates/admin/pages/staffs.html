@@ -1,0 +1,201 @@
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/layout :: html}">
+<div th:fragment="content">
+    <div class="container-fluid mt-4">
+        <h3 class="text-center mb-4">Employee Management</h3>
+
+        <!-- Search and Filter -->
+        <div class="row mb-3 ">
+            <div class="col-md-6">
+                <label for="searchEmployee"></label><input type="text" class="form-control" placeholder="Search employee by name..." id="searchEmployee">
+            </div>
+            <div class="col-md-3">
+                <label for="departmentFilter"></label><select class="form-select" id="departmentFilter">
+                    <option selected>Filter by Department</option>
+                    <option value="front-desk">Front Desk</option>
+                    <option value="housekeeping">Housekeeping</option>
+                    <option value="restaurant">Restaurant</option>
+                    <option value="management">Management</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="departmentFilters"></label><select class="form-select" id="departmentFilters">
+                    <option selected>Filter by Department</option>
+                    <option value="front-desk">Front Desk</option>
+                    <option value="housekeeping">Housekeeping</option>
+                    <option value="restaurant">Restaurant</option>
+                    <option value="management">Management</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Employee Table -->
+        <div class="card ">
+        <div class="card-header bg-primary text-white">
+            <div class="d-flex justify-content-between">
+                <h5 class="card-title m-0 ">Booking List</h5>
+                    <button class="btn btn-success p-1" data-bs-toggle="modal" data-bs-target="#addEmployeeModal">Add
+                        Employee</button>
+
+            </div>
+        </div>
+            <div class="card-body">
+            <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Jane Doe</td>
+                <td>Front Desk Manager</td>
+                <td>Front Desk</td>
+                <td>Active</td>
+                <td>
+                    <button class="btn btn-info btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#viewEmployeeModal">View</button>
+                    <button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#editEmployeeModal">Edit</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>John Smith</td>
+                <td>Housekeeper</td>
+                <td>Housekeeping</td>
+                <td>Inactive</td>
+                <td>
+                    <button class="btn btn-info btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#viewEmployeeModal">View</button>
+                    <button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#editEmployeeModal">Edit</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+            </div>
+        <!-- Modal Add Employee -->
+        <div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addEmployeeModalLabel">Add Employee</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="employeeName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="employeeName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="employeePosition" class="form-label">Position</label>
+                                <input type="text" class="form-control" id="employeePosition" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="employeeDepartment" class="form-label">Department</label>
+                                <select class="form-select" id="employeeDepartment" required>
+                                    <option value="front-desk">Front Desk</option>
+                                    <option value="housekeeping">Housekeeping</option>
+                                    <option value="restaurant">Restaurant</option>
+                                    <option value="management">Management</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="employeeStatus" class="form-label">Status</label>
+                                <select class="form-select" id="employeeStatus" required>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save Employee</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Modal View Employee -->
+        <div class="modal fade" id="viewEmployeeModal" tabindex="-1" aria-labelledby="viewEmployeeModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewEmployeeModalLabel">Employee Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Name:</strong> Jane Doe</p>
+                        <p><strong>Position:</strong> Front Desk Manager</p>
+                        <p><strong>Department:</strong> Front Desk</p>
+                        <p><strong>Status:</strong> Active</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Edit Employee -->
+        <div class="modal fade" id="editEmployeeModal" tabindex="-1" aria-labelledby="editEmployeeModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editEmployeeModalLabel">Edit Employee</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="editEmployeeName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="editEmployeeName" value="Jane Doe" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editEmployeePosition" class="form-label">Position</label>
+                                <input type="text" class="form-control" id="editEmployeePosition"
+                                       value="Front Desk Manager" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editEmployeeDepartment" class="form-label">Department</label>
+                                <select class="form-select" id="editEmployeeDepartment" required>
+                                    <option value="front-desk" selected>Front Desk</option>
+                                    <option value="housekeeping">Housekeeping</option>
+                                    <option value="restaurant">Restaurant</option>
+                                    <option value="management">Management</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editEmployeeStatus" class="form-label">Status</label>
+                                <select class="form-select" id="editEmployeeStatus" required>
+                                    <option value="active" selected>Active</option>
+                                    <option value="inactive">Inactive</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</html>

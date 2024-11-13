@@ -1,0 +1,135 @@
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/layout :: html}">
+<div th:fragment="content">
+
+    <div class=" my-5">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-3 mb-4 d-none d-md-inline ">
+                <div class="shadow p-3 vh-100 ">
+                    <h4>Filter Rooms</h4>
+                    <form>
+                        <!-- Filter: Room Type -->
+                        <div class="mb-3">
+                            <label for="roomType" class="form-label">Room Type</label>
+                            <select class="form-select" id="roomType">
+                                <option value="">All Types</option>
+                                <option value="single">Single</option>
+                                <option value="double">Double</option>
+                                <option value="suite">Suite</option>
+                            </select>
+                        </div>
+
+                        <!-- Filter: Status -->
+                        <div class="mb-3">
+                            <label for="status" class="form-label">Status</label>
+                            <select class="form-select" id="status">
+                                <option value="">All</option>
+                                <option value="reserved">Reserved</option>
+                                <option value="available">Available</option>
+                            </select>
+                        </div>
+
+                        <!-- Filter: Cleaning Status -->
+                        <div class="mb-3">
+                            <label for="cleaningStatus" class="form-label">Cleaning Status</label>
+                            <select class="form-select" id="cleaningStatus">
+                                <option value="">All</option>
+                                <option value="cleaned">Cleaned</option>
+                                <option value="dirty">Dirty</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Main Content: Room List -->
+            <div class="col-md-9 col-lg-9 ">
+                <div class="d-flex justify-content-between mb-3">
+                    <input type="text" class="form-control w-75" placeholder="Search for a room...">
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addRoomModal">+ Add
+                        Room</button>
+                </div>
+
+                <div class="row">
+                    <!-- Room card example -->
+                    <div class="col-md-4 col-lg-3 col-sm-6  mb-4">
+                        <div class="card room-card">
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Room Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Room 101</h5>
+                                <p class="card-text">Type: Single | Status: Reserved | Cleaning: Cleaned</p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-around gap-1">
+                                <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                <button class="btn btn-warning btn-sm">Edit</button>
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-sm-6  mb-4">
+                        <div class="card room-card">
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Room Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Room 101</h5>
+                                <p class="card-text">Type: Single | Status: Reserved | Cleaning: Cleaned</p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-around gap-1">
+                                <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                <button class="btn btn-warning btn-sm">Edit</button>
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-sm-6  mb-4">
+                        <div class="card room-card">
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Room Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Room 101</h5>
+                                <p class="card-text">Type: Single | Status: Reserved | Cleaning: Cleaned</p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-around gap-1">
+                                <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                <button class="btn btn-warning btn-sm">Edit</button>
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-sm-6  mb-4">
+                        <div class="card room-card">
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Room Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Room 101</h5>
+                                <p class="card-text">Type: Single | Status: Reserved | Cleaning: Cleaned</p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-around gap-1">
+                                <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                <button class="btn btn-warning btn-sm">Edit</button>
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-sm-6  mb-4">
+                        <div class="card room-card">
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Room Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Room 101</h5>
+                                <p class="card-text">Type: Single | Status: Reserved | Cleaning: Cleaned</p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-around gap-1">
+                                <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                <button class="btn btn-warning btn-sm">Edit</button>
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- More room cards can be added dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>
