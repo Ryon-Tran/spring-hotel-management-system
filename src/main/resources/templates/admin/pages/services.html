@@ -1,0 +1,97 @@
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/layout :: html}">
+<div th:fragment="content">
+    <!-- Main Content -->
+    <div class="m-2 mt-5">
+        <div class="service-header mb-4">
+            <h2>Hotel Service Management</h2>
+        </div>
+
+        <!-- Services List -->
+        <div class="card">
+            <div class="d-flex justify-content-between border p-1">
+                <h5 class="card-title m-0 ">Available Services</h5>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#addServiceModal">Add New Service</button>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-light">
+                    <tr>
+                        <th>#</th>
+                        <th>Service Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Spa</td>
+                        <td>Full body relaxation and massage therapy</td>
+                        <td>$50</td>
+                        <td><span class="badge bg-success">Available</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-info">Edit</button>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Gym</td>
+                        <td>24-hour access to gym and fitness equipment</td>
+                        <td>$20</td>
+                        <td><span class="badge badge-warning bg-warning">Under Maintenance</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-info">Edit</button>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Add more services here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Service Modal -->
+    <div class="modal fade" id="addServiceModal" tabindex="-1" aria-labelledby="addServiceModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addServiceModalLabel">Add New Service</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="serviceName">Service Name</label>
+                            <input type="text" class="form-control" id="serviceName" placeholder="Enter service name">
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceDescription">Description</label>
+                            <textarea class="form-control" id="serviceDescription" rows="3"
+                                      placeholder="Describe the service"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicePrice">Price</label>
+                            <input type="number" class="form-control" id="servicePrice" placeholder="Enter price">
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceStatus">Status</label>
+                            <select class="form-control" id="serviceStatus">
+                                <option value="available">Available</option>
+                                <option value="under_maintenance">Under Maintenance</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Service</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

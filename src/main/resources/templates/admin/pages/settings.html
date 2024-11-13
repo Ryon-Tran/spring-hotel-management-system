@@ -1,0 +1,195 @@
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/layout :: html}">
+<div th:fragment="content">
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <h2 class="mb-4">Settings</h2>
+
+        <!-- Tab Navigation -->
+        <ul class="nav nav-tabs" id="settingsTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="hotel-info-tab" data-toggle="tab" href="#hotel-info" role="tab"
+                   aria-controls="hotel-info" aria-selected="true">Hotel Info</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="room-settings-tab" data-toggle="tab" href="#room-settings" role="tab"
+                   aria-controls="room-settings" aria-selected="false">Room Settings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="user-settings-tab" data-toggle="tab" href="#user-settings" role="tab"
+                   aria-controls="user-settings" aria-selected="false">User Settings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="notification-settings-tab" data-toggle="tab" href="#notification-settings"
+                   role="tab" aria-controls="notification-settings" aria-selected="false">Notifications</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="payment-settings-tab" data-toggle="tab" href="#payment-settings" role="tab"
+                   aria-controls="payment-settings" aria-selected="false">Payment</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="staff-settings-tab" data-toggle="tab" href="#staff-settings" role="tab"
+                   aria-controls="staff-settings" aria-selected="false">Staff Management</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tax-settings-tab" data-toggle="tab" href="#tax-settings" role="tab"
+                   aria-controls="tax-settings" aria-selected="false">Tax Information</a>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content mt-4" id="settingsTabsContent">
+
+            <!-- Hotel Info Tab -->
+            <div class="tab-pane fade show active" id="hotel-info" role="tabpanel" aria-labelledby="hotel-info-tab">
+                <div class="card">
+                    <div class="card-header">Hotel Information</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="hotelName">Hotel Name</label>
+                                <input type="text" class="form-control" id="hotelName" placeholder="Enter hotel name">
+                            </div>
+                            <div class="form-group">
+                                <label for="hotelAddress">Hotel Address</label>
+                                <input type="text" class="form-control" id="hotelAddress"
+                                       placeholder="Enter hotel address">
+                            </div>
+                            <div class="form-group">
+                                <label for="hotelPhone">Phone Number</label>
+                                <input type="tel" class="form-control" id="hotelPhone" placeholder="Enter phone number">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Room Settings Tab -->
+            <div class="tab-pane fade" id="room-settings" role="tabpanel" aria-labelledby="room-settings-tab">
+                <div class="card">
+                    <div class="card-header">Room Settings</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="roomTypes">Room Types</label>
+                                <input type="text" class="form-control" id="roomTypes"
+                                       placeholder="E.g., Deluxe, Suite, Standard">
+                            </div>
+                            <div class="form-group">
+                                <label for="roomPrice">Base Room Price (per night)</label>
+                                <input type="number" class="form-control" id="roomPrice" placeholder="Enter base price">
+                            </div>
+                            <button type="submit" class="btn btn-secondary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Settings Tab -->
+            <div class="tab-pane fade" id="user-settings" role="tabpanel" aria-labelledby="user-settings-tab">
+                <div class="card">
+                    <div class="card-header">User Settings</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="adminEmail">Admin Email</label>
+                                <input type="email" class="form-control" id="adminEmail"
+                                       placeholder="Enter admin email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password"
+                                       placeholder="Enter new password">
+                            </div>
+                            <button type="submit" class="btn btn-success">Update User Settings</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notification Settings Tab -->
+            <div class="tab-pane fade" id="notification-settings" role="tabpanel"
+                 aria-labelledby="notification-settings-tab">
+                <div class="card">
+                    <div class="card-header">Notification Settings</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="emailNotifications">Email Notifications</label>
+                                <select class="form-control" id="emailNotifications">
+                                    <option>Enabled</option>
+                                    <option>Disabled</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="smsNotifications">SMS Notifications</label>
+                                <select class="form-control" id="smsNotifications">
+                                    <option>Enabled</option>
+                                    <option>Disabled</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-warning">Save Notification Settings</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Settings Tab -->
+            <div class="tab-pane fade" id="payment-settings" role="tabpanel" aria-labelledby="payment-settings-tab">
+                <div class="card">
+                    <div class="card-header">Payment Settings</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="paymentGateway">Payment Gateway</label>
+                                <input type="text" class="form-control" id="paymentGateway"
+                                       placeholder="E.g., PayPal, Stripe">
+                            </div>
+                            <div class="form-group">
+                                <label for="currency">Currency</label>
+                                <input type="text" class="form-control" id="currency" placeholder="E.g., USD, EUR">
+                            </div>
+                            <button type="submit" class="btn btn-info">Save Payment Settings</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Staff Management Tab -->
+            <div class="tab-pane fade" id="staff-settings" role="tabpanel" aria-labelledby="staff-settings-tab">
+                <div class="card">
+                    <div class="card-header">Staff Management</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="staffRoles">Staff Roles</label>
+                                <input type="text" class="form-control" id="staffRoles"
+                                       placeholder="E.g., Manager, Housekeeping">
+                            </div>
+                            <button type="submit" class="btn btn-dark">Save Staff Settings</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tax Information Tab -->
+            <div class="tab-pane fade" id="tax-settings" role="tabpanel" aria-labelledby="tax-settings-tab">
+                <div class="card">
+                    <div class="card-header">Tax Information</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="taxPercentage">Tax Percentage</label>
+                                <input type="number" class="form-control" id="taxPercentage" placeholder="E.g., 10%">
+                            </div>
+                            <button type="submit" class="btn btn-danger">Save Tax Info</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</html>
