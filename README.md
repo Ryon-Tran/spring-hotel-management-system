@@ -19,7 +19,6 @@ This repository provides a fully functional **Hotel Booking Management System** 
 - **Tools**: Maven (for dependency management)
 
 ## Getting Started
-
 ### Prerequisites
 
 - **Java 11 or higher**: Required to run Spring Boot.
